@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+body {
+	background-image:
+		url("https://media.istockphoto.com/id/1162301293/photo/blurred-august-calendar-on-blue-tone.jpg?s=612x612&w=0&k=20&c=VXcSEVN6Qub7ufw5Q340vPhsQyBos-uzEwhM7ER_f3k=");
+	background-size: 100% 600%;
+	background-repeat: no-repeat;
+}
+table
+{
+border-collapse: collapse;
+}
+td
+{
+height:20px;
+width:200px;
+text-align:center;
+}
+input[type="text"],select
+{
+height:20px;
+width:210px;
+border: 1px solid rgba(255, 255, 255, 0.3);
+background: rgba(255, 255, 255, 0.1); 
+backdrop-filter: blur(10px); 
+color: black;
+}
+button
+{
+
+height:20px;
+width:100px;
+border: 1px solid black; 
+background: rgba(255, 255, 255, 0.1); 
+color: green;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1 align=center>ATTENDANCE TRACKING FILE</h1>
+<form action="attendance" method="POST">
+<table border=2 align=center>
+
+<tr>
+<th>ROLLNUMBER</th>
+<th>STUDENTNAME</th>
+<th>COURSE</th>
+<th>ATTENDACESTATUS</th>
+<th>ATTENDANCEDATE</th>
+<th>SAVEATTENDANCE</th>
+</tr>
+
+<tr>
+<td><input type="text" name="ROLLNUMBER"></td>
+<td><input type="text" name="STUDENTNAME"></td>
+<td><select name="COURSE">
+<option></option>
+<option>INFORMATION TECHNOLOGY</option>
+<option>COMPUTER SCIENCE</option>
+<option>MECHANICAL ENGINEERING</option>
+<option>CIVIL ENGINEERING</option>
+<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+</select>
+</td>
+<td><select name="ATTENDANCESTATUS">
+<option></option>
+<option>PRESENT</option>
+<option>ABSENT</option>
+</select>
+</td>
+<td><input type="date" name="ATTENDANCEDATE"></td>
+<td><button>SUBMIT</button></td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>
+

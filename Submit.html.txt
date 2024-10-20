@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h2
+{
+text-align:center;
+}
+body {
+	background-image:
+		url("https://media.istockphoto.com/id/1864689958/vector/check-in-character-flat-vector-concept-operation-hand-drawn-illustration.jpg?s=612x612&w=0&k=20&c=nNXY-3mfkv94oUl_hBLCy0wO33PkfHDy9jE9trXcHmQ=");
+	background-size: 100% 800%;
+	background-repeat: no-repeat;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center;">Thank You for registeration! Now you can Login into your account</h1>
+<h2><a href="login.html">Click here to Login!</a></h2>
+</body>
+</html>
+

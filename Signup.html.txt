@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	background-image:
+		url("https://media.istockphoto.com/id/1864689958/vector/check-in-character-flat-vector-concept-operation-hand-drawn-illustration.jpg?s=612x612&w=0&k=20&c=nNXY-3mfkv94oUl_hBLCy0wO33PkfHDy9jE9trXcHmQ=");
+	background-size: 100% 170%;
+	background-repeat: no-repeat;
+}
+
+a {
+	margin: 0px 10px;
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: darkolivegreen;
+}
+
+td {
+	padding: 10px;
+	color: indigo;
+}
+
+table {
+	box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.3);
+	border-radius: 30px;
+}
+
+input[type="text"], input[type="password"], input[type="email"]
+ {
+	border-radius: 10px;
+	height: 20px;
+	width: 200px;
+	border:2px solid black;
+}
+select
+{
+border-radius: 10px;
+	height: 27px;
+	width: 206px;
+	border:2px solid black;
+}
+
+
+button
+{
+border-radius: 10px;
+	height: 30px;
+	width: 80px;
+}
+</style>
+</head>
+<body>
+	<form action="signup" method="POST">
+		<h1 style="text-align: center; color: black;">CREATE YOUR ACCOUNT</h1>
+		<table align=center>
+			<tr>
+				<td
+					style="font-style: sans-serif; font-size: 20px; text-align: center; padding: 10px"
+					colspan="3">REGISTER</td>
+
+			</tr>
+			
+			<tr>
+				<td style="font-style: sans-serif; font-size: 20px;">USERNAME</td>
+				<td>:</td>
+				<td><input type="text" name="USERNAME" required></td>
+			</tr>
+			<tr>
+				<td style="font-style: sans-serif; font-size: 20px;">EMAIL</td>
+				<td>:</td>
+				<td><input type="email" name="EMAIL" required></td>
+			</tr>
+			<tr>
+				<td style="font-style: sans-serif; font-size: 20px;">DEPARTMENT</td>
+				<td>:</td>
+				<td><select name="DEPARTMENT" required>
+						<option></option>
+						<option>B.TECH</option>
+						<option>B.E</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td style="font-style: sans-serif; font-size: 20px;">COURSE</td>
+				<td>:</td>
+				<td><select name="COURSE" required>
+						<option></option>
+						<option>Information Technology</option>
+						<option>Computer Science</option>
+						<option>Mechanical</option>
+						<option>Civil</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td style="font-style: sans-serif; font-size: 20px;">PASSWORD</td>
+				<td>:</td>
+				<td><input type="password" name="PASSWORD" required></td>
+			</tr>
+			<tr>
+				<td style="font-style: sans-serif; font-size: 20px;">CONFIRM
+					PASSWORD</td>
+				<td>:</td>
+				<td><input type="password" name="CONFIRMPASSWORD " required></td>
+			</tr>
+			<tr>
+				<td colspan="3" align=center><button type="submit">Submit</button></td>
+			<tr>
+				<td colspan="3" align=center>
+				<a href="login.html">Have an acconut? Login</a></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
