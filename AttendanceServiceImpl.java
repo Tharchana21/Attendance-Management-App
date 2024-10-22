@@ -19,25 +19,41 @@ public class AttendanceServiceImpl implements AttendanceService {
 	System.out.println(req.getParameter("COURSE"));
 	System.out.println(req.getParameter("ATTENDANCESTATUS"));
 	System.out.println(req.getParameter("ATTENDANCEDATE"));
+		User user = new User();
+	System.out.println("id from service " + user.getId());
 		 try
 		  {
 			  JdbcConnection.jdbc();  // Ensure the connection is established
-				String insertQuery = "INSERT INTO OnlineAttendanceApp.attendanceData(ROLLNUMBER,STUDENTNAME,COURSE,ATTENDANCESTATUS,ATTENDANCEDATE) VALUES (?,?,?,?,?)";
+				String insertQuery = "INSERT INTO OnlineAttendanceApp.attendanceData(ROLLNUMBER,STUDENTNAME,COURSE,ATTENDANCESTATUS,ATTENDANCEDATE,CREATOR_ID) VALUES (?,?,?,?,?,?)";
 
 				PreparedStatement pre = JdbcConnection.con.prepareStatement(insertQuery);
 				PrintWriter out = res.getWriter();
+
+			  Student student = new Student();
+				student.setROLLNUMBER(req.getParameter("ROLLNUMBER"));
+				student.setSTUDENTNAME(req.getParameter("STUDENTNAME"));
+				student.setCOURSE(req.getParameter("COURSE"));
+				student.setATTENDANCESTATUS(req.getParameter("ATTENDANCESTATUS"));
+				student.setATTENDANCEDATE(req.getParameter("ATTENDANCEDATE"));
 				
-				String ROLLNUMBER = req.getParameter("ROLLNUMBER");
-				String STUDENTNAME = req.getParameter("STUDENTNAME");
-				String COURSE = req.getParameter("COURSE");
-				String ATTENDANCESTATUS = req.getParameter("ATTENDANCESTATUS");
-				String ATTENDANCEDATE = req.getParameter("ATTENDANCEDATE");
+				student.setCREATOR_ID(user.getId());
+				System.out.println("get id : "+user.getId());
+			  
+				// String ROLLNUMBER = req.getParameter("ROLLNUMBER");
+				// String STUDENTNAME = req.getParameter("STUDENTNAME");
+				// String COURSE = req.getParameter("COURSE");
+				// String ATTENDANCESTATUS = req.getParameter("ATTENDANCESTATUS");
+				// String ATTENDANCEDATE = req.getParameter("ATTENDANCEDATE");
 				
 				pre.setString(1, ROLLNUMBER);
 				pre.setString(2, STUDENTNAME);
 				pre.setString(3, COURSE);
 				pre.setString(4, ATTENDANCESTATUS);
 				pre.setString(5, ATTENDANCEDATE);
+			  pre.setInt(6, student.getCREATOR_ID());
+				
+				HttpSession session = req.getSession();
+				pre.setInt(6, (int) session.getAttribute("uid"));
 				
 				int rowsAffected = pre.executeUpdate();
 				if (rowsAffected > 0) {
