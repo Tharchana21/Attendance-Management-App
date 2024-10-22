@@ -17,7 +17,7 @@ public class LoginServiceImpl implements LoginService {
 		 try
 		  {
 			  JdbcConnection.jdbc();  // Ensure the connection is established
-			  String SelectQuery = "SELECT USERNAME, PASSWORD FROM OnlineAttendanceApp.usersTable WHERE USERNAME = ? AND PASSWORD = ?;";
+			  String SelectQuery = "SELECT id, USERNAME, PASSWORD FROM OnlineAttendanceApp.usersTable WHERE USERNAME = ? AND PASSWORD = ?;";
 			  
 			  
 			  PreparedStatement pre = JdbcConnection.con.prepareStatement(SelectQuery);
@@ -31,6 +31,15 @@ public class LoginServiceImpl implements LoginService {
 				
 				ResultSet resultSet = pre.executeQuery();
 				if (resultSet.next()) {
+
+					User user = new User();
+					user.setId(resultSet.getInt("id"));
+					//storing id temporary
+					HttpSession session = req.getSession();
+					session.setAttribute("uid", resultSet.getInt("id"));
+					System.out.println("login "+session.getAttribute("uid"));
+
+					
 					res.sendRedirect("attendance.html");
 					out.println("logged in success");
 				} else {
